@@ -1,5 +1,24 @@
 <script>
-
+export default {
+  data() {
+    return {
+      currentPage: 1,
+      itemsPerPage: 8,
+    };
+  },
+  computed: {
+    paginatedProducts() {
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+      const endIndex = startIndex + this.itemsPerPage;
+      return products.slice(startIndex, endIndex);
+    }
+  },
+  methods: {
+    setPage(pageNumber) {
+      this.currentPage = pageNumber;
+    }
+  }
+}
 </script>
 <script setup>
 import products from '@/assets/products.json'
@@ -7,7 +26,7 @@ import products from '@/assets/products.json'
 
 <template>
   <div class="wrapper">
-    <div v-for="product in products" :key="product.id" class="single-card">
+    <div v-for="product in paginatedProducts" :key="product.id" class="single-card">
       <div class="img-area">
         <img :src="product.image" :alt="product.title">
         <div class="overlay">
@@ -22,7 +41,12 @@ import products from '@/assets/products.json'
   </div>
   </div>
 
-<!--  2nd row-->
+<!--  Paginatie-->
+  <div class="pagination">
+    <button v-for="n in Math.ceil(products.length / itemsPerPage)" :key="n" @click="setPage(n)">
+      {{ n }}
+    </button>
+  </div>
 
 </template>
 

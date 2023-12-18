@@ -6,7 +6,10 @@
     "image": "src/assets/Futuristic.jpg",
     "price": 159.99,
     "btw": 21,
-    "stock": 95
+    "stock": 95,
+    "Gen": 1,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id": 2,
@@ -15,7 +18,10 @@
     "image": "src/assets/Sakura.jpg",
     "price": 199.99,
     "btw": 21,
-    "stock": 230
+    "stock": 230,
+    "Gen": 1,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id": 3,
@@ -24,7 +30,10 @@
     "image": "src/assets/Greyscale.jpg",
     "price": 139.99,
     "btw": 21,
-    "stock": 100
+    "stock": 100,
+    "Gen": 1,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id": 4,
@@ -33,7 +42,10 @@
     "image": "src/assets/Emerald.jpg",
     "price": 189.99,
     "btw": 21,
-    "stock": 120
+    "stock": 120,
+    "Gen": 2,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id": 5,
@@ -42,7 +54,10 @@
     "image": "src/assets/Pirate.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 78
+    "stock": 78,
+    "Gen": 1,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id": 6,
@@ -51,7 +66,10 @@
     "image": "src/assets/Easter.jpg",
     "price": 189.99,
     "btw": 21,
-    "stock": 34
+    "stock": 34,
+    "Gen": 2,
+    "Seasonal": "yes",
+    "new": "no"
   },
   {
     "id": 7,
@@ -60,7 +78,10 @@
     "image": "src/assets/Halloween.jpg",
     "price": 239.99,
     "btw": 21,
-    "stock": 60
+    "stock": 60,
+    "Gen": 2,
+    "Seasonal": "yes",
+    "new": "no"
   },
   {
     "id":8,
@@ -69,16 +90,22 @@
     "image": "src/assets/Christmas.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 50,
+    "Gen": 2,
+    "Seasonal": "yes",
+    "new": "no"
   },
   {
     "id":9,
-    "title": "Cyberbully",
+    "title": "Cyberbully GEN 1",
     "description": "",
     "image": "src/assets/Cyberpunk.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 120
+    "stock": 120,
+    "Gen": 1,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id":10,
@@ -87,7 +114,10 @@
     "image": "src/assets/Beach.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 45
+    "stock": 45,
+    "Gen": 2,
+    "Seasonal": "yes",
+    "new": "no"
   },
   {
     "id":11,
@@ -96,7 +126,10 @@
     "image": "src/assets/Egypt.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 30
+    "stock": 30,
+    "Gen": 1,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id":12,
@@ -105,7 +138,10 @@
     "image": "src/assets/Forest.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 230
+    "stock": 230,
+    "Gen": 1,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id":13,
@@ -114,7 +150,10 @@
     "image": "src/assets/Frog.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 25
+    "stock": 25,
+    "Gen": 2,
+    "Seasonal": "no",
+    "new": "yes"
   },
   {
     "id":14,
@@ -123,7 +162,10 @@
     "image": "src/assets/Moon.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 112
+    "stock": 112,
+    "Gen": 1,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id":15,
@@ -132,7 +174,10 @@
     "image": "src/assets/Neon.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 300
+    "stock": 300,
+    "Gen": 2,
+    "Seasonal": "no",
+    "new": "yes"
   },
   {
     "id":16,
@@ -141,7 +186,10 @@
     "image": "src/assets/Pizza.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 23
+    "stock": 23,
+    "Gen": 1,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id":17,
@@ -150,7 +198,10 @@
     "image": "src/assets/Rainbow.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 69
+    "stock": 69,
+    "Gen": 2,
+    "Seasonal": "no",
+    "new": "yes"
   },
   {
     "id":18,
@@ -159,7 +210,10 @@
     "image": "src/assets/Snow.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 44
+    "stock": 44,
+    "Gen": 2,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id":19,
@@ -168,7 +222,10 @@
     "image": "src/assets/Storm.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 234
+    "stock": 234,
+    "Gen": 1,
+    "Seasonal": "no",
+    "new": "no"
   },
   {
     "id":20,
@@ -177,6 +234,9 @@
     "image": "src/assets/Summer.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 123
+    "stock": 123,
+    "Gen": 2,
+    "Seasonal": "yes",
+    "new": "no"
   }
 ]
