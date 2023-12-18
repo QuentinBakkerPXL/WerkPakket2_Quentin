@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "Futuristic GEN 1",
+    "description": "",
+    "image": "src/assets/Futuristic.jpg",
+    "price": 159.99,
+    "btw": 21,
+    "stock": 95
+  },
+  {
+    "id": 2,
+    "title": "Japanese Sakura GEN 1",
+    "description": "",
+    "image": "src/assets/Sakura.jpg",
+    "price": 199.99,
+    "btw": 21,
+    "stock": 230
+  },
+  {
+    "id": 3,
+    "title": "Greyscale GEN 1",
+    "description": "",
+    "image": "src/assets/Greyscale.jpg",
+    "price": 139.99,
+    "btw": 21,
+    "stock": 100
+  },
+  {
+    "id": 4,
+    "title": "Emerald",
+    "description": "",
+    "image": "src/assets/Emerald.jpg",
+    "price": 189.99,
+    "btw": 21,
+    "stock": 120
+  },
+  {
+    "id": 5,
+    "title": "Ship Ahoy GEN 1",
+    "description": "",
+    "image": "src/assets/Pirate.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 78
+  },
+  {
+    "id": 6,
+    "title": "Easter Limited",
+    "description": "",
+    "image": "src/assets/Easter.jpg",
+    "price": 189.99,
+    "btw": 21,
+    "stock": 34
+  },
+  {
+    "id": 7,
+    "title": "Peeka-Boo Limited",
+    "description": "",
+    "image": "src/assets/Halloween.jpg",
+    "price": 239.99,
+    "btw": 21,
+    "stock": 60
+  },
+  {
+    "id":8,
+    "title": "Ho-Ho-Ho Limited",
+    "description": "",
+    "image": "src/assets/Christmas.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":9,
+    "title": "Cyberbully",
+    "description": "",
+    "image": "src/assets/Cyberpunk.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 120
+  },
+  {
+    "id":10,
+    "title": "Lazy Days",
+    "description": "",
+    "image": "src/assets/Beach.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":11,
+    "title": "Dunes GEN 1",
+    "description": "",
+    "image": "src/assets/Egypt.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":12,
+    "title": "Explorer GEN 1",
+    "description": "",
+    "image": "src/assets/Forest.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":13,
+    "title": "Froppy",
+    "description": "",
+    "image": "src/assets/Frog.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":14,
+    "title": "SpaceRanger GEN 1",
+    "description": "",
+    "image": "src/assets/Moon.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":15,
+    "title": "Neon Light",
+    "description": "",
+    "image": "src/assets/Neon.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":16,
+    "title": "Italy's favourite GEN 1",
+    "description": "",
+    "image": "src/assets/Pizza.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":17,
+    "title": "The other side",
+    "description": "",
+    "image": "src/assets/Rainbow.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":18,
+    "title": "Snowed in",
+    "description": "",
+    "image": "src/assets/Snow.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":19,
+    "title": "Electrified GEN 1",
+    "description": "",
+    "image": "src/assets/Storm.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  },
+  {
+    "id":20,
+    "title": "Summertime Limited",
+    "description": "",
+    "image": "src/assets/Summer.jpg",
+    "price": 229.99,
+    "btw": 21,
+    "stock": 50
+  }
+]
