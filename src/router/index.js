@@ -11,7 +11,7 @@ const router = createRouter( {
     routes: [
         {path: '/', component: home},
         {path: '/login', component: login},
-        {path: '/detail', component: detail},
+        {path: '/detail/:id', component: detail},
         {path: '/cart', component: cart},
         {path: '/overzicht', component: overzicht},
         {path: '/checkout', component: checkout}

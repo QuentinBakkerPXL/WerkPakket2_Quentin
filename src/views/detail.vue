@@ -1,5 +1,34 @@
-<script setup>
+<script>
+import { useRouter } from 'vue-router';
 
+export default {
+  // ...existing data, computed, methods...
+
+  setup() {
+    const router = useRouter();
+
+    const viewProductDetails = (id) => {
+      router.push({ path: `/detail/${id}` });
+    };
+
+    return { viewProductDetails };
+  }
+};
+</script>
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import products from '@/assets/products.json';
+
+const route = useRoute();
+const product = ref(null);
+
+onMounted(() => {
+  // Explicitly extract the 'id' parameter and convert it to a number
+  const productIdString = route.params.id;
+  const productId = Array.isArray(productIdString) ? parseInt(productIdString[0], 10) : parseInt(productIdString, 10);
+  product.value = products.find(p => p.id === productId);
+});
 </script>
 
 <template>
@@ -7,7 +36,7 @@
     <section id="product-page">
       <div class="product-details">
         <div class="product-img">
-          <img src="../assets/Futuristic.jpg" alt/>
+          <img :src="product.image" :alt="product.title" />
         </div>
         <div class="product-text">
           <span class="product-category">Gen 1 Watches</span>

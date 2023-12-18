@@ -1,59 +1,39 @@
+<script>
+export default {
+  data() {
+    return {
+      topProducts: []
+    };
+  },
+  created() {
+    this.sortAndFilterProducts();
+  },
+  methods: {
+    sortAndFilterProducts() {
+      this.topProducts = [...products]
+          .sort((a, b) => b.stock - a.stock) // Sort by stock in descending order
+          .slice(0, 4); // Get top 4 products
+    }
+  }
+}
+</script>
 <script setup>
+import products from '@/assets/products.json'
 </script>
 
 <template>
   <div class="wrapper">
-    <div class="single-card">
+    <div v-for="product in topProducts" :key="product.id" class="single-card">
       <div class="img-area">
-        <img src="../assets/Futuristic.jpg" alt="">
+        <img :src="product.image" :alt="product.title">
         <div class="overlay">
           <button @click="addToCart(product)" class="add-to-cart">Add to cart</button>
           <button class="view-details">View details</button>
         </div>
       </div>
       <div class="info">
-        <h3>Futuristic gen 1</h3>
-        <p class="price">$159.99</p>
-      </div>
-    </div>
-    <div class="single-card">
-      <div class="img-area">
-        <img src="../assets/Sakura.jpg" alt="">
-        <div class="overlay">
-          <button class="add-to-cart">Add to cart</button>
-          <button class="view-details">View details</button>
-        </div>
-      </div>
-      <div class="info">
-        <h3>Japanese Sakura gen 1</h3>
-        <p class="price">$199.99</p>
-      </div>
-    </div>
-    <div class="single-card">
-      <div class="img-area">
-        <img src="../assets/Greyscale.jpg" alt="">
-        <div class="overlay">
-          <button class="add-to-cart">Add to cart</button>
-          <button class="view-details">View details</button>
-        </div>
-      </div>
-      <div class="info">
-        <h3>Greyscale gen 1</h3>
-        <p class="price">$139.99</p>
-      </div>
-    </div>
-    <div class="single-card">
-      <div class="img-area">
-        <img src="../assets/Easter.jpg" alt="">
-        <div class="overlay">
-          <button class="add-to-cart">Add to cart</button>
-          <button class="view-details">View details</button>
-        </div>
-      </div>
-      <div class="info">
-        <h3>Easter limited</h3>
-        <p class="price">$189.99</p><br>
-        <p class="limited">Season out of rotation</p>
+        <h3>{{ product.title }}</h3>
+        <p class="price">${{ product.price.toFixed(2) }}</p>
       </div>
     </div>
   </div>

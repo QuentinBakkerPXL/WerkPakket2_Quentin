@@ -1,5 +1,15 @@
 <script>
+import { useRouter } from 'vue-router';
 export default {
+  setup() {
+    const router = useRouter();
+
+    const detail = (id) => {
+      router.push({ path: `/detail/${id}` });
+    };
+
+    return { detail };
+  },
   data() {
     return {
       currentPage: 1,
@@ -24,6 +34,10 @@ export default {
     }
   },
   methods: {
+    detail(id) {
+      const router = useRouter();
+      router.push({ path: `/detail/${id}` });
+    },
     setPage(pageNumber) {
       this.currentPage = pageNumber;
     },
@@ -35,7 +49,7 @@ export default {
     },
     toggleFilterNew() {
       this.filterNew = !this.filterNew;
-    }
+    },
   }
 }
 </script>
@@ -69,7 +83,7 @@ import products from '@/assets/products.json'
         <img :src="product.image" :alt="product.title">
         <div class="overlay">
           <button @click="addToCart(product)" class="add-to-cart">Add to cart</button>
-          <button class="view-details">View details</button>
+          <button @click="detail(product.id)" class="view-details">View details</button>
         </div>
       </div>
       <div class="info">
