@@ -87,7 +87,7 @@
     "image": "src/assets/Beach.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 45
   },
   {
     "id":11,
@@ -96,7 +96,7 @@
     "image": "src/assets/Egypt.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 30
   },
   {
     "id":12,
@@ -105,7 +105,7 @@
     "image": "src/assets/Forest.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 230
   },
   {
     "id":13,
@@ -114,7 +114,7 @@
     "image": "src/assets/Frog.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 25
   },
   {
     "id":14,
@@ -123,7 +123,7 @@
     "image": "src/assets/Moon.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 112
   },
   {
     "id":15,
@@ -132,7 +132,7 @@
     "image": "src/assets/Neon.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 300
   },
   {
     "id":16,
@@ -141,7 +141,7 @@
     "image": "src/assets/Pizza.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 23
   },
   {
     "id":17,
@@ -150,7 +150,7 @@
     "image": "src/assets/Rainbow.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 69
   },
   {
     "id":18,
@@ -159,7 +159,7 @@
     "image": "src/assets/Snow.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 44
   },
   {
     "id":19,
@@ -168,7 +168,7 @@
     "image": "src/assets/Storm.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 234
   },
   {
     "id":20,
@@ -177,6 +177,6 @@
     "image": "src/assets/Summer.jpg",
     "price": 229.99,
     "btw": 21,
-    "stock": 50
+    "stock": 123
   }
 ]
