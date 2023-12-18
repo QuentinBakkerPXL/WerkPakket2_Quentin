@@ -37,13 +37,13 @@
   },
   {
     "id": 4,
-    "title": "Emerald",
+    "title": "Emerald GEN 1",
     "description": "",
     "image": "src/assets/Emerald.jpg",
     "price": 189.99,
     "btw": 21,
     "stock": 120,
-    "Gen": 2,
+    "Gen": 1,
     "Seasonal": "no",
     "new": "no"
   },

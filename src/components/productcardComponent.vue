@@ -4,18 +4,37 @@ export default {
     return {
       currentPage: 1,
       itemsPerPage: 8,
+      filterGen1: false,
+      filterSeasonal: false,
+      filterNew: false,
     };
   },
   computed: {
+    filteredProducts() {
+      return products.filter(product => {
+        return (!this.filterGen1 || product.Gen === 1) &&
+            (!this.filterSeasonal || product.Seasonal === 'yes') &&
+            (!this.filterNew || product.new === 'yes');
+      });
+    },
     paginatedProducts() {
       const startIndex = (this.currentPage - 1) * this.itemsPerPage;
       const endIndex = startIndex + this.itemsPerPage;
-      return products.slice(startIndex, endIndex);
+      return this.filteredProducts.slice(startIndex, endIndex);
     }
   },
   methods: {
     setPage(pageNumber) {
       this.currentPage = pageNumber;
+    },
+    toggleFilterGen1() {
+      this.filterGen1 = !this.filterGen1;
+    },
+    toggleFilterSeasonal() {
+      this.filterSeasonal = !this.filterSeasonal;
+    },
+    toggleFilterNew() {
+      this.filterNew = !this.filterNew;
     }
   }
 }
@@ -25,6 +44,25 @@ import products from '@/assets/products.json'
 </script>
 
 <template>
+<!--  filters-->
+  <div class="filters">
+    <button
+        :class="['button', { 'button-active': filterGen1 }]"
+        @click="toggleFilterGen1">
+      {{ filterGen1 ? 'Hide Gen 1' : 'Show Gen 1' }}
+    </button>
+    <button
+        :class="['button', { 'button-active': filterSeasonal }]"
+        @click="toggleFilterSeasonal">
+      {{ filterSeasonal ? 'Hide Seasonal' : 'Show Seasonal' }}
+    </button>
+    <button
+        :class="['button', { 'button-active': filterNew }]"
+        @click="toggleFilterNew">
+      {{ filterNew ? 'Hide New' : 'Show New' }}
+    </button>
+  </div>
+
   <div class="wrapper">
     <div v-for="product in paginatedProducts" :key="product.id" class="single-card">
       <div class="img-area">
@@ -43,7 +81,11 @@ import products from '@/assets/products.json'
 
 <!--  Paginatie-->
   <div class="pagination">
-    <button v-for="n in Math.ceil(products.length / itemsPerPage)" :key="n" @click="setPage(n)">
+    <button
+        v-for="n in Math.ceil(products.length / itemsPerPage)"
+        :key="n"
+        :class="['button', { 'button-active': currentPage === n }]"
+        @click="setPage(n)">
       {{ n }}
     </button>
   </div>
@@ -51,6 +93,38 @@ import products from '@/assets/products.json'
 </template>
 
 <style scoped>
+.filters, .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.filters .button, .pagination .button {
+  background-color: #212121;
+  border: none;
+  color: #F2F2F2;
+  padding: 12px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  font-size: 17px;
+  border-radius: 25px;
+}
+
+.filters .button:hover, .pagination .button:hover {
+  background-color: #c76744;
+  color: #F2F2F2;
+}
+
+.filters .button-active, .pagination .button-active  {
+  background-color: #c76744;
+}
+
+
+
+
 .wrapper {
   display: flex;
   flex-wrap: wrap;
