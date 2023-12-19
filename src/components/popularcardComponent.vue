@@ -1,7 +1,18 @@
 <script>
 import {useShopStore} from "@/store/shop";
+import {useRouter} from "vue-router";
+import products from '@/assets/products.json'
 
 export default {
+  setup() {
+    const router = useRouter();
+
+    const detail = (id) => {
+      router.push({ path: `/detail/${id}` });
+    };
+
+    return { detail };
+  },
   data() {
     return {
       topProducts: []
@@ -16,19 +27,13 @@ export default {
           .sort((a, b) => b.stock - a.stock) // Sort by stock in descending order
           .slice(0, 4); // Get top 4 products
     },
-
     addToCart(product) {
-
       useShopStore().addToCart(product);
-      alert("product toegevoegd aan winkelmandje!");
+      alert("Product is toegevoegd aan het winkelmandje.");
     },
   }
 }
 </script>
-<script setup>
-import products from '@/assets/products.json'
-</script>
-
 <template>
   <div class="wrapper">
     <div v-for="product in topProducts" :key="product.id" class="single-card">
@@ -36,7 +41,7 @@ import products from '@/assets/products.json'
         <img :src="product.image" :alt="product.title">
         <div class="overlay">
           <button @click="addToCart(product)" class="add-to-cart">Add to cart</button>
-          <button class="view-details">View details</button>
+          <button @click="detail(product.id)" class="view-details">View details</button>
         </div>
       </div>
       <div class="info">

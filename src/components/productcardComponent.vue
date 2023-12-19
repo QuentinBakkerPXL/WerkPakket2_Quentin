@@ -146,9 +146,6 @@ import products from '@/assets/products.json'
   background-color: #c76744;
 }
 
-
-
-
 .wrapper {
   display: flex;
   flex-wrap: wrap;
