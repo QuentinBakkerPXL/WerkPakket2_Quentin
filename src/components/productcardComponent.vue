@@ -1,5 +1,7 @@
 <script>
 import { useRouter } from 'vue-router';
+import {useShopStore} from "@/store/shop.js";
+
 export default {
   setup() {
     const router = useRouter();
@@ -50,6 +52,12 @@ export default {
     toggleFilterNew() {
       this.filterNew = !this.filterNew;
     },
+
+    addToCart(product) {
+
+      useShopStore().addToCart(product);
+      alert("product toegevoegd aan winkelmandje!");
+    },
   }
 }
 </script>
@@ -83,7 +91,9 @@ import products from '@/assets/products.json'
         <img :src="product.image" :alt="product.title">
         <div class="overlay">
           <button @click="addToCart(product)" class="add-to-cart">Add to cart</button>
+          <router-link :to="{ name: 'product-detail', params: { id: product.id } }">
           <button @click="detail(product.id)" class="view-details">View details</button>
+          </router-link>
         </div>
       </div>
       <div class="info">

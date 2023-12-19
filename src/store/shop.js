@@ -1,24 +1,85 @@
+// import { defineStore } from 'pinia';
+//
+// export const useCartStore = defineStore('cart', {
+//     state: () => ({
+//         items: []
+//     }),
+//     actions: {
+//         addToCart(product) {
+//             const existingProduct = this.items.find(item => item.id === product.id);
+//             if (existingProduct) {
+//                 existingProduct.quantity++;
+//             } else {
+//                 this.items.push({ ...product, quantity: 1 });
+//             }
+//         },
+//         removeFromCart(productId) {
+//             const index = this.items.findIndex(item => item.id === productId);
+//             if (index > -1) {
+//                 this.items.splice(index, 1);
+//             }
+//         },
+//         // More actions like increment, decrement, clear cart etc.
+//     }
+// });
+
+
+
+
 import { defineStore } from 'pinia';
 
-export const useCartStore = defineStore('cart', {
+export const useShopStore = defineStore('shop', {
     state: () => ({
-        items: []
+        products: [],
+        cart: [],
     }),
+    getters: {
+
+    },
     actions: {
+        async fetchProducts() {
+            try {
+                const response = await fetch('src/assets/products.json');
+                const data = await response.json();
+                this.setProducts(data);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        },
+
+        setProducts(products) {
+            this.products = products;
+        },
+
         addToCart(product) {
-            const existingProduct = this.items.find(item => item.id === product.id);
-            if (existingProduct) {
-                existingProduct.quantity++;
+            // Logic to add product to the cart for both logged-in and non-logged-in users
+            const isProductInCart = this.cart.some(item => item.id === product.id);
+
+            if (isProductInCart) {
+                const existingProduct = this.cart.find(item => item.id === product.id);
+                existingProduct.quantity += 1;
             } else {
-                this.items.push({ ...product, quantity: 1 });
+                this.cart.push({ ...product, quantity: 1 });
             }
         },
-        removeFromCart(productId) {
-            const index = this.items.findIndex(item => item.id === productId);
-            if (index > -1) {
-                this.items.splice(index, 1);
+        removeItemFromCart(productId) {
+            const index = this.cart.findIndex(item => item.id === productId);
+            if (index !== -1) {
+                this.cart.splice(index, 1);
             }
         },
-        // More actions like increment, decrement, clear cart etc.
-    }
-});
+        incrementItemQuantity(productId) {
+            const product = this.cart.find(item => item.id === productId);
+            if (product) {
+                product.quantity += 1;
+            }
+        },
+        decrementItemQuantity(productId) {
+            const product = this.cart.find(item => item.id === productId);
+            if (product && product.quantity > 1) {
+                product.quantity -= 1;
+            }
+        },
+    },})
+
+
