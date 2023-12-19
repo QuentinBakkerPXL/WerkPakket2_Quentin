@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Futuristic GEN 1",
+    "title": "Futuristic",
     "description": "",
     "image": "src/assets/Futuristic.jpg",
     "price": 159.99,
@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "title": "Japanese Sakura GEN 1",
+    "title": "Japanese Sakura",
     "description": "",
     "image": "src/assets/Sakura.jpg",
     "price": 199.99,
@@ -25,8 +25,8 @@
   },
   {
     "id": 3,
-    "title": "Greyscale GEN 1",
-    "description": "",
+    "title": "Greyscale",
+    "description": "Keep it simple, keep it monotone. No need for all these fancy colors. Greyscale is the way to go, Easy on the eyes and fashionable around the wrist.",
     "image": "src/assets/Greyscale.jpg",
     "price": 139.99,
     "btw": 21,
@@ -37,7 +37,7 @@
   },
   {
     "id": 4,
-    "title": "Emerald GEN 1",
+    "title": "Emerald",
     "description": "",
     "image": "src/assets/Emerald.jpg",
     "price": 189.99,
@@ -49,7 +49,7 @@
   },
   {
     "id": 5,
-    "title": "Ship Ahoy GEN 1",
+    "title": "Ship Ahoy",
     "description": "",
     "image": "src/assets/Pirate.jpg",
     "price": 229.99,
@@ -61,7 +61,7 @@
   },
   {
     "id": 6,
-    "title": "Easter Limited",
+    "title": "Easter Fun",
     "description": "",
     "image": "src/assets/Easter.jpg",
     "price": 189.99,
@@ -73,7 +73,7 @@
   },
   {
     "id": 7,
-    "title": "Peeka-Boo Limited",
+    "title": "Peeka-Boo",
     "description": "",
     "image": "src/assets/Halloween.jpg",
     "price": 239.99,
@@ -85,7 +85,7 @@
   },
   {
     "id":8,
-    "title": "Ho-Ho-Ho Limited",
+    "title": "Ho-Ho-Ho",
     "description": "",
     "image": "src/assets/Christmas.jpg",
     "price": 229.99,
@@ -97,7 +97,7 @@
   },
   {
     "id":9,
-    "title": "Cyberbully GEN 1",
+    "title": "Cyberbully",
     "description": "",
     "image": "src/assets/Cyberpunk.jpg",
     "price": 229.99,
@@ -121,7 +121,7 @@
   },
   {
     "id":11,
-    "title": "Dunes GEN 1",
+    "title": "Dunes",
     "description": "",
     "image": "src/assets/Egypt.jpg",
     "price": 229.99,
@@ -133,7 +133,7 @@
   },
   {
     "id":12,
-    "title": "Explorer GEN 1",
+    "title": "Explorer",
     "description": "",
     "image": "src/assets/Forest.jpg",
     "price": 229.99,
@@ -157,7 +157,7 @@
   },
   {
     "id":14,
-    "title": "SpaceRanger GEN 1",
+    "title": "SpaceRanger",
     "description": "",
     "image": "src/assets/Moon.jpg",
     "price": 229.99,
@@ -181,7 +181,7 @@
   },
   {
     "id":16,
-    "title": "Italy's favourite GEN 1",
+    "title": "Italy's favourite",
     "description": "",
     "image": "src/assets/Pizza.jpg",
     "price": 229.99,

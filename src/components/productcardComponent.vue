@@ -56,7 +56,7 @@ export default {
     addToCart(product) {
 
       useShopStore().addToCart(product);
-      alert("product toegevoegd aan winkelmandje!");
+      alert("Product is toegevoegd aan het winkelmandje.");
     },
   }
 }
