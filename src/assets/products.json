@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Futuristic",
-    "description": "",
+    "description": "Step into the future with this sleek, modern design. Featuring cutting-edge technology, this watch is perfect for those who love to be ahead of the trend. Its durable build ensures it keeps pace with your dynamic lifestyle.",
     "image": "src/assets/Futuristic.jpg",
     "price": 159.99,
     "btw": 0.21,
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "title": "Japanese Sakura",
-    "description": "",
+    "description": "Embrace the elegance of Japan with this Sakura-themed watch. Its delicate design, inspired by cherry blossoms, combines traditional beauty with contemporary style. Ideal for both formal and casual occasions.",
     "image": "src/assets/Sakura.jpg",
     "price": 199.99,
     "btw": 0.21,
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "title": "Emerald",
-    "description": "",
+    "description": "Radiate luxury with the Emerald watch, showcasing a stunning green hue reminiscent of precious gems. Its sophisticated design is perfect for those who appreciate a touch of opulence in their accessories. A true statement piece for any collection.",
     "image": "src/assets/Emerald.jpg",
     "price": 189.99,
     "btw": 0.21,
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "title": "Ship Ahoy",
-    "description": "",
+    "description": "Are you feeling like you'd be able to battle the rough seas? Maybe you'd want to at least do it in style! ",
     "image": "src/assets/Pirate.jpg",
     "price": 229.99,
     "btw": 0.21,
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "title": "Easter Fun",
-    "description": "",
+    "description": "Celebrate the joy of spring with the vibrant Easter Fun watch. Adorned with festive colors and playful designs, it's perfect for adding a touch of whimsy to your everyday wear. An ideal accessory for the season of renewal.",
     "image": "src/assets/Easter.jpg",
     "price": 189.99,
     "btw": 0.21,
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "title": "Peeka-Boo",
-    "description": "",
+    "description": "Get into the Halloween spirit with the Peeka-Boo watch. Its spooky design is perfect for those who enjoy the thrill of the season, offering a unique and eye-catching accessory. A must-have for Halloween enthusiasts.",
     "image": "src/assets/Halloween.jpg",
     "price": 239.99,
     "btw": 0.21,
@@ -86,7 +86,7 @@
   {
     "id":8,
     "title": "Ho-Ho-Ho",
-    "description": "",
+    "description": "Spread holiday cheer with the Ho-Ho-Ho watch, perfect for the festive season. Its cheerful design captures the essence of Christmas, making it a great accessory for holiday gatherings. A delightful gift for anyone who loves the spirit of the season.",
     "image": "src/assets/Christmas.jpg",
     "price": 189.99,
     "btw": 0.21,
@@ -98,7 +98,7 @@
   {
     "id":9,
     "title": "Cyberbully",
-    "description": "",
+    "description": "Dive into a world of futuristic style with the Cyberbully watch. Its bold, cyberpunk-inspired design is perfect for those who embrace edgy, avant-garde fashion. A standout accessory that's sure to turn heads.",
     "image": "src/assets/Cyberpunk.jpg",
     "price": 219.99,
     "btw": 0.21,
@@ -110,7 +110,7 @@
   {
     "id":10,
     "title": "Lazy Days",
-    "description": "",
+    "description": "Capture the essence of relaxation with the Lazy Days watch. Its beach-inspired design brings a sense of calm and serenity, perfect for those laid-back days. A great companion for your leisurely getaways.",
     "image": "src/assets/Beach.jpg",
     "price": 109.99,
     "btw": 0.21,
@@ -122,7 +122,7 @@
   {
     "id":11,
     "title": "Dunes",
-    "description": "",
+    "description": "Venture into the wild with the robust Explorer watch. Designed for the outdoor enthusiast, it combines durability with a nature-inspired aesthetic. A reliable companion for your adventurous pursuits.",
     "image": "src/assets/Egypt.jpg",
     "price": 139.99,
     "btw": 0.21,
@@ -134,7 +134,7 @@
   {
     "id":12,
     "title": "Explorer",
-    "description": "",
+    "description": "Venture into the wild with the robust Explorer watch. Designed for the outdoor enthusiast, it combines durability with a nature-inspired aesthetic. A reliable companion for your adventurous pursuits.",
     "image": "src/assets/Forest.jpg",
     "price": 169.99,
     "btw": 0.21,
@@ -146,7 +146,7 @@
   {
     "id":13,
     "title": "Froppy",
-    "description": "",
+    "description": "Leap into style with the playful Froppy watch. Its frog-themed design is full of charm and whimsy, perfect for those who love fun and quirky accessories. A delightful addition to any casual outfit.",
     "image": "src/assets/Frog.jpg",
     "price": 199.99,
     "btw": 0.21,
@@ -158,7 +158,7 @@
   {
     "id":14,
     "title": "SpaceRanger",
-    "description": "",
+    "description": "Journey to the stars with the SpaceRanger watch. Its celestial design is perfect for those fascinated by the cosmos, offering a glimpse into the wonders of space. A stylish accessory for the aspiring astronaut.",
     "image": "src/assets/Moon.jpg",
     "price": 219.99,
     "btw": 0.21,
@@ -170,7 +170,7 @@
   {
     "id":15,
     "title": "Neon Light",
-    "description": "",
+    "description": "Light up the night with the vibrant Neon Light watch. Its bright, neon colors are perfect for those who love to stand out and make a statement. A bold choice for the fashion-forward individual.",
     "image": "src/assets/Neon.jpg",
     "price": 249.99,
     "btw": 0.21,
@@ -182,7 +182,7 @@
   {
     "id":16,
     "title": "Italy's favourite",
-    "description": "",
+    "description": "Celebrate the flavors of Italy with this pizza-themed watch. Perfect for the foodie who loves a touch of whimsy in their accessories. Its playful design is sure to be a conversation starter.",
     "image": "src/assets/Pizza.jpg",
     "price": 119.99,
     "btw": 0.21,
@@ -194,7 +194,7 @@
   {
     "id":17,
     "title": "Rainbow",
-    "description": "",
+    "description": "Add a splash of color to your day with the Rainbow watch. Its vibrant and cheerful design is perfect for brightening up any outfit. A joyful accessory for those who love to live life in color.",
     "image": "src/assets/Rainbow.jpg",
     "price": 129.99,
     "btw": 0.21,
@@ -206,7 +206,7 @@
   {
     "id":18,
     "title": "Snowed in",
-    "description": "",
+    "description": "Embrace the beauty of winter with the Snowed in watch. Its snowy design is perfect for those who love the serene calm of a winter landscape. A chic accessory for the chilly season.",
     "image": "src/assets/Snow.jpg",
     "price": 229.99,
     "btw": 0.21,
@@ -218,7 +218,7 @@
   {
     "id":19,
     "title": "Electrified",
-    "description": "",
+    "description": "Feel the energy with the Electrified watch. Its storm-inspired design captures the raw power of nature, perfect for those who are drawn to bold and dramatic styles. A striking addition to any outfit.",
     "image": "src/assets/Storm.jpg",
     "price": 179.99,
     "btw": 0.21,
@@ -230,7 +230,7 @@
   {
     "id":20,
     "title": "Summertime",
-    "description": "",
+    "description": "Celebrate the warmth of the season with the Summertime watch. Its sunny, cheerful design is perfect for those summer days filled with fun and adventure. A great accessory for enjoying the best of the season.",
     "image": "src/assets/Summer.jpg",
     "price": 159.99,
     "btw": 0.21,
