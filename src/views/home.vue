@@ -12,7 +12,7 @@ import cardStyleHot from '@/components/popularcardComponent.vue'
   </div>
 
   <main>
-    <h2>Whats HOT right now?</h2>
+    <h2>What's HOT right now?</h2>
     <card-style-hot></card-style-hot>
   </main>
 

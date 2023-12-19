@@ -45,6 +45,14 @@ export default {
     // Call fetchProductData when the route is updated
     this.fetchProductData().then(next);
   },
+  computed: {
+    priceWithTax() {
+      if (this.product && this.product.price && this.product.btw) {
+        return (this.product.price * (1 + this.product.btw)).toFixed(2);
+      }
+      return 'N/A';
+    }
+  },
 };
 
 </script>
@@ -62,8 +70,11 @@ export default {
         <div class="product-text">
           <h2 class="product-category">Product generation {{ product.Gen }}</h2>
           <h3>{{ product.title }}</h3>
-          <span class="product-price">Price: ${{ product.price ? product.price.toFixed(2) : 'N/A' }}</span>
-          <p>{{ product.description }}</p>
+          <span class="product-price">Price: ${{ product.price ? product.price.toFixed(2) : 'N/A' }}</span><br>
+          <span class="price-with-tax">Price with Tax: ${{ priceWithTax }}</span>
+
+          <p class="stock">Stock: {{ product.stock }}</p>
+          <p>{{ product.description }}</p><br>
                    <div class="product-button">
                      <button @click="addToCart(product)" class="add-cart-btn" id="button2">Add to Cart</button>
                      <router-link :to="{ name: 'product-list' }" class="back-button">{{ button2 }}</router-link>
@@ -73,25 +84,6 @@ export default {
       </div>
     </section>
   </main>
-<!--<main>-->
-<!--  <div class="detail-container" v-if="product"><div class="links">-->
-<!--    <img v-if="product.image" :src="`/${product.image}`" alt="Product Image" class="product-image" />-->
-<!--  </div>-->
-<!--    <div class="rechts">-->
-<!--      <h2>{{ product.title }}</h2>-->
-<!--      <p class="Gen">Generation: {{ product.Gen }}</p>-->
-<!--      <p class="description">{{ product.description }}</p><br>-->
-<!--      <p class="price">Price: ${{ product.price ? product.price.toFixed(2) : 'N/A' }}</p>-->
-<!--      <p class="price-with-tax">Price with Tax: ${{ product.btw ? product.btw.toFixed(2) : 'N/A' }}</p><br>-->
-<!--      <p class="stock">Stock: {{ product.stock }}</p>-->
-<!--      <button @click="addToCart(product)" class="add-to-cart-button" id="button2">Add to Cart</button>-->
-<!--      <router-link :to="{ name: 'product-list' }" class="back-button">{{ button2 }}</router-link>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div v-else>-->
-<!--    <p>Error: Product not found.</p>-->
-<!--  </div>-->
-<!--</main>-->
 </template>
 
 <style scoped>
@@ -169,6 +161,7 @@ export default {
   letter-spacing: 0.5px;
   font-size: 0.9rem;
   border-radius: 25px;
+  border: none
 }
 
 .product-details .product-text .add-cart-btn {
