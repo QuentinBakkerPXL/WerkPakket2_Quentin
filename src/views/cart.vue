@@ -91,8 +91,8 @@ export default {
             <button @click="incrementQuantity(item.id)">{{ plus }}</button>
           </div>
           <div>
-            <button @click="removeFromCart(item.id)">{{ button1 }}</button>
-            <button v-if="cart.length > 0" @click="checkout" class="checkout-button">{{ button2 }}</button>
+            <button @click="removeFromCart(item.id)" class="bottom-button">{{ button1 }}</button>
+            <button v-if="cart.length > 0" @click="checkout" class="bottom-button">{{ button2 }}</button>
           </div>
         </div>
       </li>
@@ -120,12 +120,12 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two columns */
   grid-template-rows: auto; /* Rows size to content */
-  max-height: 300px; /* Maximum height for each row */
+  max-height: 350px; /* Maximum height for each row */
   margin-bottom: 15px;
 }
 
 .cart-item-img, .cart-item-text {
-  max-height: 300px; /* Maximum height for the image and text sections */
+  max-height: 350px; /* Maximum height for the image and text sections */
   overflow: hidden; /* Prevent content from spilling over */
 }
 
@@ -155,13 +155,11 @@ main {
 }
 
 .cart-item-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  margin: 5px 0 5px 0;
 }
 
 .cart-item-buttons button {
-  width: 100%;
+  width: 60px;
   border-radius: 25px;
   border: none;
   padding: 10px;
@@ -174,7 +172,11 @@ main {
   color: #F2F2F2;
 }
 
-.checkout-button {
-  /* Add styling for the checkout button here */
+.bottom-button {
+  width: 100px;
+  border-radius: 25px;
+  border: none;
+  padding: 10px;
+  font-size: 0.9rem;
 }
 </style>
