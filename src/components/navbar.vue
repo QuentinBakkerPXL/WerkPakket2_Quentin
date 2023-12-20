@@ -10,7 +10,7 @@
 
     <nav class="navbar">
       <router-link to="/overzicht">Overzicht</router-link>
-      <router-link to="/detail">Detail</router-link>
+<!--      <router-link to="/detail">Detail</router-link>-->
       <router-link to="/login">Login</router-link>
       <router-link to="/cart">Cart</router-link>
     </nav>
@@ -19,6 +19,7 @@
 </template>
 
 <style scoped>
+
 .header {
   position: fixed;
   background-color: #F2F2F2;
@@ -49,7 +50,7 @@
   margin-left: 40px;
 }
 
-.navbar a:hover {
+.navbar a:hover, .logo:hover {
   color: #5b95d4;
 }
 

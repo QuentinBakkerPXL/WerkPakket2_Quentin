@@ -8,12 +8,29 @@ export default {
     const shopStore = useShopStore();
     const cart = computed(() => shopStore.cart);
 
+    // Computed property for total price without tax
+    const totalPriceNoTax = computed(() => {
+      return cart.value.reduce((acc, item) => {
+        return acc + (item.price * item.quantity);
+      }, 0).toFixed(2); // Fixed to 2 decimal places
+    });
+
+    // Computed property for total price with tax
+    const totalPriceWithTax = computed(() => {
+      return cart.value.reduce((acc, item) => {
+        return acc + (item.price * item.quantity) + (item.price * item.btw * item.quantity);
+      }, 0).toFixed(2); // Fixed to 2 decimal places
+    });
+
     const removeFromCart = (productId) => {
       shopStore.removeItemFromCart(productId);
     };
 
     const incrementQuantity = (productId) => {
-      shopStore.incrementItemQuantity(productId);
+      const item = shopStore.cart.find(item => item.id === productId);
+      if (item && item.quantity < item.stock) {
+        shopStore.incrementItemQuantity(productId);
+      }
     };
 
     const decrementQuantity = (productId) => {
@@ -32,19 +49,20 @@ export default {
 
     return {
       cart,
+      totalPriceNoTax,
+      totalPriceWithTax,
       removeFromCart,
       incrementQuantity,
       decrementQuantity,
       checkout,
-      "titel": "Uw winkelmandje:",
-      "NoBTW": "Prijs zonder btw: ",
-      "totaalprijs": "Prijs met btw: ",
-      "hoeveelheid": "Hoeveelheid: ",
+      "titel": "Your shopping cart:",
+      "NoBTW": "Price without tax: ",
+      "totaalprijs": "Price with tax: ",
+      "hoeveelheid": "Amount: ",
       "plus": "+",
       "min": "-",
-      "button1": "Verwijder",
+      "button1": "Delete",
       "button2": "Checkout"
-
     };
   },
 };
@@ -52,38 +70,111 @@ export default {
 </script>
 
 <template>
+  <main>
   <div class="cart-container">
     <h2>{{ titel }}</h2>
+    <span>Total Price Without Tax: ${{ totalPriceNoTax }}</span><br>
+    <span>Total Price With Tax: ${{ totalPriceWithTax }}</span>
     <ul class="cart-items">
       <li v-for="item in cart" :key="item.id" class="cart-item">
-        <div class="cart-item-info">
+        <div class="cart-item-img">
           <img :src="item.image" alt="Product Image" class="cart-item-image" />
-          <div class="cart-item-details">
-            <p>{{ item.name }}</p>
-            <br />
-            <p>{{ item.description }}</p>
-            <br />
-            <p>{{ NoBTW }} {{ item.price }}€</p>
-            <br />
-            <p>{{ totaalprijs }} {{ item.btw }}€</p>
-            <br />
-            <p class="item-quantity">{{hoeveelheid}} {{ item.quantity }}</p>
-
-            <div class="quantity-buttons">
-              <button @click="incrementQuantity(item.id)">{{plus}}</button>
-              <button @click="decrementQuantity(item.id)">{{min}}</button>
-            </div>
-            <br />
-            <button @click="removeFromCart(item.id)">{{button1}}</button>
+        </div>
+        <div class="cart-item-text">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <span>{{ NoBTW }} ${{ (item.price * item.quantity).toFixed(2) }}</span><br>
+          <span>{{ totaalprijs }} ${{ (item.price * item.quantity + (item.price * item.btw * item.quantity)).toFixed(2) }}</span>
+          <p class="item-quantity">{{ hoeveelheid }} {{ item.quantity }}</p>
+          <div class="cart-item-buttons">
+            <button @click="decrementQuantity(item.id)">{{ min }}</button>
+            <button @click="incrementQuantity(item.id)">{{ plus }}</button>
+          </div>
+          <div>
+            <button @click="removeFromCart(item.id)">{{ button1 }}</button>
+            <button v-if="cart.length > 0" @click="checkout" class="checkout-button">{{ button2 }}</button>
           </div>
         </div>
       </li>
     </ul>
-
-    <button v-if="cart.length > 0" @click="checkout" class="checkout-button">{{button2}}</button>
   </div>
+  </main>
 </template>
 
 <style scoped>
+main {
+  margin-top: 100px;
+}
+.cart-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 50px auto;
+}
 
+.cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-template-rows: auto; /* Rows size to content */
+  max-height: 300px; /* Maximum height for each row */
+  margin-bottom: 15px;
+}
+
+.cart-item-img, .cart-item-text {
+  max-height: 300px; /* Maximum height for the image and text sections */
+  overflow: hidden; /* Prevent content from spilling over */
+}
+
+.cart-item-img img {
+  width: 100%;
+  height: 100%; /* Adjusted to fill the parent container */
+  object-fit: cover;
+  object-position: center;
+}
+
+.cart-item-text {
+  background-color: #ffffff;
+  padding: 30px;
+  position: relative;
+}
+
+.cart-item-text h3 {
+  color: #252525;
+  font-size: 1.8rem;
+  margin: 10px 0px;
+}
+
+.cart-item-text p, .cart-item-text span {
+  color: #adadad;
+  margin: 10px 0px;
+  font-size: 0.9rem;
+}
+
+.cart-item-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.cart-item-buttons button {
+  width: 100%;
+  border-radius: 25px;
+  border: none;
+  padding: 10px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.cart-item-buttons button:hover {
+  background-color: #c76744;
+  color: #F2F2F2;
+}
+
+.checkout-button {
+  /* Add styling for the checkout button here */
+}
 </style>
