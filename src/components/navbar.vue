@@ -9,10 +9,10 @@
     </div>
 
     <nav class="navbar">
-      <router-link to="/overzicht">Overzicht</router-link>
+      <router-link to="/overzicht">All products</router-link>
 <!--      <router-link to="/detail">Detail</router-link>-->
-      <router-link to="/login">Login</router-link>
       <router-link to="/cart">Cart</router-link>
+      <router-link to="/login">Login</router-link>
     </nav>
 
   </header>
@@ -32,7 +32,13 @@
   align-items: center;
   z-index: 100;
 }
-
+.logo a{
+  color: #212121;
+  text-decoration: none;
+}
+.logo a:hover {
+  color: #5b95d4;
+}
 .header .logo {
   font-size: 32px;
   color: #212121;

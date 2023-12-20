@@ -56,8 +56,12 @@ export default {
     addToCart(product) {
 
       useShopStore().addToCart(product);
-      alert("Product is toegevoegd aan het winkelmandje.");
+      alert("Product has been added to shopping cart.");
     },
+    trimDescription(description) {
+      const trimmed = description.split(/\. +/)[0];
+      return trimmed.length < description.length ? trimmed + '...' : trimmed;
+    }
   }
 }
 </script>
@@ -99,6 +103,7 @@ import products from '@/assets/products.json'
       <div class="info">
         <h3>{{ product.title }}</h3>
         <p class="price">${{ product.price }}</p>
+        <p class="description">{{ trimDescription(product.description) }}</p>
       </div>
   </div>
   </div>
@@ -244,6 +249,8 @@ import products from '@/assets/products.json'
   margin: 0;
   font-size: 30px;
   color: #5b95d4;
+  padding-bottom: 10px;
+
 }
 
 </style>
