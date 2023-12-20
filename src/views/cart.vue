@@ -90,7 +90,7 @@ export default {
             <button @click="decrementQuantity(item.id)">{{ min }}</button>
             <button @click="incrementQuantity(item.id)">{{ plus }}</button>
           </div>
-          <div>
+          <div class="bottom-button-main">
             <button @click="removeFromCart(item.id)" class="bottom-button">{{ button1 }}</button>
             <button v-if="cart.length > 0" @click="checkout" class="bottom-button">{{ button2 }}</button>
           </div>
@@ -155,7 +155,7 @@ main {
 }
 
 .cart-item-buttons {
-  margin: 5px 0 5px 0;
+  margin: 5px 0 30px 0;
 }
 
 .cart-item-buttons button {
@@ -170,6 +170,10 @@ main {
 .cart-item-buttons button:hover {
   background-color: #c76744;
   color: #F2F2F2;
+}
+
+.bottom-button-main {
+  text-align: center;
 }
 
 .bottom-button {
