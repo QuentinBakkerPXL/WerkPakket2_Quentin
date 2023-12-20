@@ -105,6 +105,7 @@ export default {
 main {
   margin-top: 100px;
 }
+
 .cart-container {
   max-width: 1200px;
   width: 90%;

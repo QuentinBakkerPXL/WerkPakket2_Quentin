@@ -5,6 +5,7 @@ import detail from '@/views/detail.vue'
 import cart from '@/views/cart.vue'
 import overzicht from '@/views/overzicht.vue'
 import checkout from '@/views/checkout.vue'
+import confirmation from "@/views/confirmation.vue";
 
 const router = createRouter( {
     history: createWebHistory(),
@@ -14,7 +15,9 @@ const router = createRouter( {
         {path: '/detail/:id', component: detail, name: "product-detail", props: true},
         {path: '/cart', component: cart},
         {path: '/overzicht', component: overzicht, name: "product-list"},
-        {path: '/checkout', component: checkout}
+        {path: '/checkout', component: checkout},
+        {path: '/confirmation', component: confirmation}
+
     ]
 })
 export default router
