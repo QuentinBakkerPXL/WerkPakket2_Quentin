@@ -7,8 +7,8 @@ export default {
     const shopStore = useShopStore();
 
     const clearCartAndGoHome = () => {
-      shopStore.cart = []; // Clear the cart
-      router.push('/'); // Redirect to the home page
+      shopStore.cart = [];
+      router.push('/');
     };
 
     return { clearCartAndGoHome };
@@ -18,7 +18,7 @@ export default {
 
 <template>
   <main class="thank-you-page">
-    <h1>Thank You for Your Order!</h1>
+    <h1>Thank you for your order!</h1>
     <p>Your order has been placed successfully.</p>
     <button @click="clearCartAndGoHome">Continue Shopping</button>
   </main>
@@ -30,7 +30,9 @@ export default {
   text-align: center;
   padding: 50px;
 }
-
+.thank-you-page p {
+  padding: 10px 0 30px 0;
+}
 .thank-you-page h1 {
   margin-bottom: 20px;
 }
@@ -40,7 +42,7 @@ export default {
   background-color: #5b95d4;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
 }
 

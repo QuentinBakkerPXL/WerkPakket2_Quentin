@@ -6,7 +6,6 @@ const username = ref('');
 const password = ref('');
 const loginError = ref(false);
 
-// Use a computed property that reacts to changes in localStorage
 const isLoggedIn = ref(localStorage.getItem('isLoggedIn') === 'true');
 
 const handleLogin = (e) => {
@@ -18,7 +17,7 @@ const handleLogin = (e) => {
       router.push('/Confirmation');
       sessionStorage.removeItem('postLoginAction');
     } else {
-      router.push('/defaultRouteAfterLogin');
+      router.push('/');
     }
   } else {
     loginError.value = true;
@@ -30,7 +29,6 @@ const handleLogout = () => {
   isLoggedIn.value = false;
 };
 
-// Ensure isLoggedIn is synced with localStorage on component mount
 onMounted(() => {
   isLoggedIn.value = localStorage.getItem('isLoggedIn') === 'true';
 });
@@ -40,7 +38,7 @@ onMounted(() => {
   <main>
     <div class="center">
       <h1 v-if="!isLoggedIn">Login</h1>
-      <h1 v-else>Welcome Robin!</h1>
+      <h1 v-else>You are logged in!</h1>
 
       <form v-if="!isLoggedIn" @submit="handleLogin">
         <div class="txt_field">
@@ -59,8 +57,9 @@ onMounted(() => {
           Don't have an account yet? <a href="#">Signup</a>
         </div>
       </form>
-
+      <div class="bottombutton">
       <button v-if="isLoggedIn" @click="handleLogout" class="logout-button">Logout</button>
+      </div>
     </div>
   </main>
 </template>
@@ -169,15 +168,20 @@ onMounted(() => {
   text-decoration: underline;
 }
 
+.bottombutton {
+  text-align: center;
+}
+
 .logout-button {
-  width: 100%;
-  height: 50px;
+  width: 50%;
+  height: 45px;
   background-color: #5b95d4;
   color: white;
   border: none;
   border-radius: 25px;
   font-size: 18px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .logout-button:hover {

@@ -10,10 +10,8 @@
 
     <nav class="navbar">
       <router-link to="/overzicht">All products</router-link>
-<!--      <router-link to="/detail">Detail</router-link>-->
       <router-link to="/cart">Cart</router-link>
       <router-link to="/login">Login</router-link>
-      <router-link to="/confirmation">confirm</router-link>
     </nav>
 
   </header>

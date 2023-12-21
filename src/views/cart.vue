@@ -177,4 +177,9 @@ main {
   padding: 10px;
   font-size: 0.9rem;
 }
+
+.bottom-button:hover {
+  background-color: #c76744;
+  color: white;
+}
 </style>
