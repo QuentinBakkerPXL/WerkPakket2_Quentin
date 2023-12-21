@@ -112,20 +112,20 @@ main {
 
 .cart-item {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns */
-  grid-template-rows: auto; /* Rows size to content */
-  max-height: 350px; /* Maximum height for each row */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  max-height: 350px;
   margin-bottom: 15px;
 }
 
 .cart-item-img, .cart-item-text {
-  max-height: 350px; /* Maximum height for the image and text sections */
-  overflow: hidden; /* Prevent content from spilling over */
+  max-height: 350px;
+  overflow: hidden;
 }
 
 .cart-item-img img {
   width: 100%;
-  height: 100%; /* Adjusted to fill the parent container */
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }

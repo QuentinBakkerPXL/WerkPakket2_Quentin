@@ -118,7 +118,7 @@ export default {
 }
 
 .product-details .product-text .product-category {
-  color: #adadad; /* $labelcolor */
+  color: #adadad;
   font-size: 0.9rem;
 }
 
@@ -137,7 +137,7 @@ export default {
 
 .product-details .product-text p {
   margin: 30px 0px;
-  color: #adadad; /* $labelcolor */
+  color: #adadad;
   letter-spacing: 1px;
   font-size: 0.9rem;
 }
@@ -185,7 +185,7 @@ export default {
 }
 
 .product-details .help-btn:hover {
-  color: #5b95d4; /* $lightblue */
+  color: #5b95d4;
 }
 
 
