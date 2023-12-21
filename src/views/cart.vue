@@ -8,18 +8,12 @@ export default {
     const shopStore = useShopStore();
     const cart = computed(() => shopStore.cart);
 
-    // Computed property for total price without tax
     const totalPriceNoTax = computed(() => {
-      return cart.value.reduce((acc, item) => {
-        return acc + (item.price * item.quantity);
-      }, 0).toFixed(2); // Fixed to 2 decimal places
+      return cart.value.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2);
     });
 
-    // Computed property for total price with tax
     const totalPriceWithTax = computed(() => {
-      return cart.value.reduce((acc, item) => {
-        return acc + (item.price * item.quantity) + (item.price * item.btw * item.quantity);
-      }, 0).toFixed(2); // Fixed to 2 decimal places
+      return cart.value.reduce((acc, item) => acc + (item.price * item.quantity) + (item.price * item.btw * item.quantity), 0).toFixed(2);
     });
 
     const removeFromCart = (productId) => {
@@ -38,12 +32,11 @@ export default {
     };
 
     const checkout = () => {
-      if (!shopStore.isLoggedIn) {
-        // If not logged in, redirect to the login page
-        router.push('/login');
+      if (localStorage.getItem('isLoggedIn') === 'true') {
+        router.push('/Confirmation');
       } else {
-        // If logged in, proceed with the checkout logic
-        router.push('/Checkout');
+        sessionStorage.setItem('postLoginAction', 'Confirmation');
+        router.push('/login');
       }
     };
 
@@ -55,19 +48,19 @@ export default {
       incrementQuantity,
       decrementQuantity,
       checkout,
-      "titel": "Your shopping cart:",
-      "NoBTW": "Price without tax: ",
-      "totaalprijs": "Price with tax: ",
-      "hoeveelheid": "Amount: ",
-      "plus": "+",
-      "min": "-",
-      "button1": "Delete",
-      "button2": "Checkout"
+      titel: "Your shopping cart:",
+      NoBTW: "Price without tax: ",
+      totaalprijs: "Price with tax: ",
+      hoeveelheid: "Amount: ",
+      plus: "+",
+      min: "-",
+      button1: "Delete",
+      button2: "Checkout"
     };
   },
 };
-
 </script>
+
 
 <template>
   <main>

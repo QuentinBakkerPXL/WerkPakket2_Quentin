@@ -1,28 +1,66 @@
 <script setup>
+import { ref, onMounted } from 'vue';
+import router from "@/router";
 
+const username = ref('');
+const password = ref('');
+const loginError = ref(false);
+
+// Use a computed property that reacts to changes in localStorage
+const isLoggedIn = ref(localStorage.getItem('isLoggedIn') === 'true');
+
+const handleLogin = (e) => {
+  e.preventDefault();
+  if (username.value === 'robin' && password.value === 'test123') {
+    localStorage.setItem('isLoggedIn', 'true');
+    const postLoginAction = sessionStorage.getItem('postLoginAction');
+    if (postLoginAction === 'Confirmation') {
+      router.push('/Confirmation');
+      sessionStorage.removeItem('postLoginAction');
+    } else {
+      router.push('/defaultRouteAfterLogin');
+    }
+  } else {
+    loginError.value = true;
+  }
+};
+
+const handleLogout = () => {
+  localStorage.setItem('isLoggedIn', 'false');
+  isLoggedIn.value = false;
+};
+
+// Ensure isLoggedIn is synced with localStorage on component mount
+onMounted(() => {
+  isLoggedIn.value = localStorage.getItem('isLoggedIn') === 'true';
+});
 </script>
 
 <template>
   <main>
     <div class="center">
-      <h1>Login</h1>
-      <form method="post">
+      <h1 v-if="!isLoggedIn">Login</h1>
+      <h1 v-else>Welcome Robin!</h1>
+
+      <form v-if="!isLoggedIn" @submit="handleLogin">
         <div class="txt_field">
-          <input type="text" required>
+          <input type="text" v-model="username" required>
           <span></span>
           <label>Username</label>
         </div>
         <div class="txt_field">
-          <input type="password" required>
+          <input type="password" v-model="password" required>
           <span></span>
           <label>Password</label>
         </div>
-        <div class="pass">Forgot Password?</div>
+        <p v-if="loginError">Invalid username or password!</p>
         <input type="submit" value="Login">
         <div class="signup_link">
           Don't have an account yet? <a href="#">Signup</a>
         </div>
       </form>
+
+      <button v-if="isLoggedIn" @click="handleLogout" class="logout-button">Logout</button>
     </div>
   </main>
 </template>
@@ -97,15 +135,6 @@
   width: 100%;
 }
 
-.center .pass {
-  margin: -5px 0 20px 5px;
-  color: #adadad;
-  cursor: pointer;
-}
-
-.center .pass:hover {
-  text-decoration: underline;
-}
 
 .center input[type="submit"] {
   width: 100%;
@@ -138,6 +167,21 @@
 
 .center .signup_link a:hover {
   text-decoration: underline;
+}
+
+.logout-button {
+  width: 100%;
+  height: 50px;
+  background-color: #5b95d4;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #c76744;
 }
 
 </style>
