@@ -42,7 +42,6 @@ export default {
   },
   watch: {},
   beforeRouteUpdate(to, from, next) {
-    // Call fetchProductData when the route is updated
     this.fetchProductData().then(next);
   },
   computed: {

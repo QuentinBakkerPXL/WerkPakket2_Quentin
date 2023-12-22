@@ -50,8 +50,6 @@ export default {
   </main>
 </template>
 
-
-
 <style scoped>
 .thank-you-page {
   text-align: center;

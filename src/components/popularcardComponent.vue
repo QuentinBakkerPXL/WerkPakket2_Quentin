@@ -24,8 +24,8 @@ export default {
   methods: {
     sortAndFilterProducts() {
       this.topProducts = [...products]
-          .sort((a, b) => b.stock - a.stock) // Sort by stock in descending order
-          .slice(0, 4); // Get top 4 products
+          .sort((a, b) => b.stock - a.stock)
+          .slice(0, 4);
     },
     addToCart(product) {
       useShopStore().addToCart(product);

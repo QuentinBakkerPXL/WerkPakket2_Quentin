@@ -17,8 +17,8 @@ export default {
     });
 
     const address = ref('');
-    const showBillingInfo = ref(false); // State for the checkbox
-    const billingAddress = ref(''); // State for the billing address
+    const showBillingInfo = ref(false);
+    const billingAddress = ref('');
 
     onMounted(() => {
       const storedAddress = localStorage.getItem('userAddress');
@@ -75,14 +75,12 @@ export default {
         <input type="checkbox" v-model="showBillingInfo">
         Use a different billing address
         </label>
-        <!-- Billing information fields -->
         <div v-if="showBillingInfo" class="billing-info">
           <div class="txt_field">
             <input type="text" v-model="billingAddress" placeholder="Billing Address">
             <span></span>
             <label>Enter billing address</label>
           </div>
-          <!-- Add other billing fields as needed -->
         </div><br>
         <button @click="confirmOrder">Confirm Order</button>
       </div>
