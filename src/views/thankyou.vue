@@ -59,9 +59,10 @@ export default {
 }
 .thank-you-page li {
   list-style-type: none;
+  padding: 20px;
 }
 .thank-you-page p {
-  padding: 10px 0 30px 0;
+  padding: 10px 0 10px 0;
 }
 .thank-you-page h1 {
   margin-bottom: 20px;
