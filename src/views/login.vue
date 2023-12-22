@@ -2,16 +2,23 @@
 import { ref, onMounted } from 'vue';
 import router from "@/router";
 
+const users = [
+  { username: 'robin', password: 'test123', address: 'Elfde-Liniestraat 24, 3500 Hasselt' },
+  { username: 'quentin', password: 'bakker', address: 'Rechterstraat 2, 3511 Kuringen' }
+];
+
 const username = ref('');
 const password = ref('');
 const loginError = ref(false);
-
 const isLoggedIn = ref(localStorage.getItem('isLoggedIn') === 'true');
+const userAddress = ref('');
 
 const handleLogin = (e) => {
   e.preventDefault();
-  if (username.value === 'robin' && password.value === 'test123') {
+  const user = users.find(u => u.username === username.value && u.password === password.value);
+  if (user) {
     localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userAddress', user.address);
     const postLoginAction = sessionStorage.getItem('postLoginAction');
     if (postLoginAction === 'Confirmation') {
       router.push('/Confirmation');
@@ -26,6 +33,7 @@ const handleLogin = (e) => {
 
 const handleLogout = () => {
   localStorage.setItem('isLoggedIn', 'false');
+  localStorage.removeItem('userAddress');
   isLoggedIn.value = false;
 };
 

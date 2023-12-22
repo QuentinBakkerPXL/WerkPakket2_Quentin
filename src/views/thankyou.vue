@@ -1,4 +1,5 @@
 <script>
+import { computed } from 'vue';
 import { useShopStore } from '@/store/shop.js';
 import router from "@/router";
 
@@ -6,29 +7,58 @@ export default {
   setup() {
     const shopStore = useShopStore();
 
+    const cartItems = computed(() => shopStore.cart);
+
+    const totalPriceNoTax = computed(() => {
+      return cartItems.value.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2);
+    });
+
+    const totalPriceWithTax = computed(() => {
+      return cartItems.value.reduce((acc, item) => acc + (item.price * item.quantity) + (item.price * item.btw * item.quantity), 0).toFixed(2);
+    });
+
+    const address = localStorage.getItem('userAddress') || 'Address not provided';
+
     const clearCartAndGoHome = () => {
       shopStore.cart = [];
+      localStorage.removeItem('userAddress');
       router.push('/');
     };
 
-    return { clearCartAndGoHome };
+    return { cartItems, totalPriceNoTax, totalPriceWithTax, address, clearCartAndGoHome };
   },
 };
 </script>
+
 
 <template>
   <main class="thank-you-page">
     <h1>Thank you for your order!</h1>
     <p>Your order has been placed successfully.</p>
+    <div>
+      <h2>Order Summary:</h2>
+      <ul>
+        <li v-for="item in cartItems" :key="item.id">
+          {{ item.title }} - Quantity: {{ item.quantity }}
+        </li>
+      </ul>
+      <p>Total Price Without Tax: ${{ totalPriceNoTax }}</p>
+      <p>Total Price With Tax: ${{ totalPriceWithTax }}</p>
+      <p>Shipping Address: {{ address }}</p>
+    </div>
     <button @click="clearCartAndGoHome">Continue Shopping</button>
   </main>
 </template>
+
 
 
 <style scoped>
 .thank-you-page {
   text-align: center;
   padding: 50px;
+}
+.thank-you-page li {
+  list-style-type: none;
 }
 .thank-you-page p {
   padding: 10px 0 30px 0;

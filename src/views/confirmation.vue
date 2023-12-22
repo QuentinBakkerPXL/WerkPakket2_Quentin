@@ -1,5 +1,5 @@
 <script>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useShopStore } from '@/store/shop.js';
 import router from "@/router";
 
@@ -17,9 +17,22 @@ export default {
     });
 
     const address = ref('');
+    const showBillingInfo = ref(false); // State for the checkbox
+    const billingAddress = ref(''); // State for the billing address
+
+    onMounted(() => {
+      const storedAddress = localStorage.getItem('userAddress');
+      if (storedAddress) {
+        address.value = storedAddress;
+      }
+    });
 
     const confirmOrder = () => {
+      // Handle order confirmation logic
       alert("Order confirmed with address: " + address.value);
+      if (showBillingInfo.value) {
+        alert("Billing address: " + billingAddress.value);
+      }
       router.push('/thankyou');
     };
 
@@ -28,11 +41,14 @@ export default {
       totalPriceNoTax,
       totalPriceWithTax,
       address,
-      confirmOrder
+      confirmOrder,
+      showBillingInfo,
+      billingAddress
     };
   },
 };
 </script>
+
 
 <template>
   <main>
@@ -55,8 +71,22 @@ export default {
           <span></span>
           <label>Enter shipping adress</label>
         </div>
+        <label>
+        <input type="checkbox" v-model="showBillingInfo">
+        Use a different billing address
+        </label>
+        <!-- Billing information fields -->
+        <div v-if="showBillingInfo" class="billing-info">
+          <div class="txt_field">
+            <input type="text" v-model="billingAddress" placeholder="Billing Address">
+            <span></span>
+            <label>Enter billing address</label>
+          </div>
+          <!-- Add other billing fields as needed -->
+        </div><br>
         <button @click="confirmOrder">Confirm Order</button>
       </div>
+
     </div>
   </main>
 </template>
